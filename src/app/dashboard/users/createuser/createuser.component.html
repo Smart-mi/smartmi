@@ -1,0 +1,150 @@
+<div class="container-fluid">
+
+  <div class="row py-3">
+    <div class="col-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><span class="lnr lnr-home" [routerLink]="['/dashboard']"></span></li>
+          <li class="breadcrumb-item"><a [routerLink]="['/dashboard/users']">Users</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Create user</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- content body start -->
+  <div class="card">
+    <div class="container-fluid">
+      <div class="row py-4 border-bottom">
+        <div class="col-12 d-flex align-items-center">
+          <span>Create User</span>
+        </div>
+      </div>
+
+      <div class="row py-3">
+        <div class="col-lg-4 col-12 py-3">
+          <input [(ngModel)]="user.name" (change)="validatefields()" type="text" name="name" id="name" class="form-control" placeholder="Full Name*">
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="select-wraper">
+            <select [(ngModel)]="user.company" (change)="validatefields()" class="form-control" required>
+              <option>Company*</option>
+              <option value="{{company.name}}" *ngFor="let company of companyList">{{company.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="select-wraper">
+            <select [(ngModel)]="selectedAssCom" (change)="update()" class="form-control">
+              <option >Assigned Companies*</option>
+              <option value="{{i}}" *ngFor="let company of companyList,let i=index">{{company.name}}</option>
+            </select>
+          </div>
+          <div class="">
+            <div class="d-flex" *ngFor="let item of user.assignedcompany; let i = index">
+              <span class="px-1">{{item.name}}</span>
+              <span class="text-danger smartmi-close px-1" (click)="delete(i, item)">x</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="select-wraper">
+            <select [(ngModel)]="user.designation" (change)="validatefields()" class="form-control">
+              <option>Designation*</option>
+              <option value="Sales Engineer">Sales Enginee</option>
+              <option value="Application Engineer">Application Engineer</option>
+              <option value="Sales Manager">Sales Manager</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="select-wraper">
+            <select [(ngModel)]="user.department" (change)="validatefields()" class="form-control">
+              <option>Department*</option>
+              <option value="Administration">Administration</option>
+              <option value="Sales">Sales</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="select-wraper">
+            <select [(ngModel)]="user.reportingto" (change)="validatefields()" class="form-control">
+              <option>Reporting to*</option>
+              <option value="Admin">Admin</option>
+              <option value="{{user.name}}" *ngFor="let user of userList">{{user.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="select-wraper">
+            <select [(ngModel)]="user.role" (change)="validatefields()" class="form-control ">
+              <option>Role*</option>
+              <option value="Admin">Admin</option>
+              <option value="Sales">sales</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <input [(ngModel)]="user.employeecode" (change)="validatefields()" type="text" name="phone" id="phone" class="form-control" placeholder="Empoloyee code*">
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <input [(ngModel)]="user.mobile" (change)="validatefields()" type="text" name="phone" id="phone" class="form-control" placeholder="Mobile Number*">
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <input [(ngModel)]="user.telephone" (change)="validatefields()" type="text" name="phone" id="phone" class="form-control" placeholder="Telephone Number*">
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="input-group">
+            <input [(ngModel)]="user.email" (change)="validatefields()" type="text" class="form-control" placeholder="Email*">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">@</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <input [(ngModel)]="user.username" (change)="validatefields()" type="text" name="phone" id="phone" class="form-control" placeholder="Username*">
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="input-group">
+            <input [(ngModel)]="user.password" (change)="validatefields()" type="text" class="form-control" placeholder="Password*">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2"><i class="fas fa-exclamation-circle"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="input-group">
+            <input [(ngModel)]="confirmPasssword" (change)="validatefields()" type="text" class="form-control" placeholder="Confirm Password*">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2"><i class="fas fa-exclamation-circle"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 py-3">
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" (change)="fileupload($event)" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose profile pic</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row py-3">
+        <div class="col-12 d-flex align-items-center justify-content-between">
+            <div class="custom-control custom-switch" id="activestatus">
+              <input [(ngModel)]="user.active" type="checkbox" class="custom-control-input" id="customSwitch1">
+              <label class="custom-control-label" for="customSwitch1"></label>
+            </div>
+          <button class="btn btn-secondary disabled save btn-sm px-5 py-1"  (click)="save()" *ngIf="saveFlag">Save</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- content body stop -->
+
+</div>
+
+
+

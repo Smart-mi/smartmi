@@ -1,0 +1,10 @@
+img{
+  width: 138px;
+}
+.box{
+  width: 25px;
+  height: 25px;
+}
+.pad-0{
+  padding: 0 !important;
+}

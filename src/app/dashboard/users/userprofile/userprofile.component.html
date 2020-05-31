@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="row py-3">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><i class="fas fa-home"  [routerLink]="['/dashboard']"></i></li>
+            <li class="breadcrumb-item"><span class="point text-primary" [routerLink]="['/dashboard/users']">User List</span></li>
+            <li class="breadcrumb-item">{{userDetails.name}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4"></div>
+          <div class="col-4"></div>
+        </div>
+        <div class="row px-2">
+          <div class="col-12 d-flex align-items-center justify-content-between">
+            <div class="">
+              <button class="btn title-alt " *ngFor="let tab of tabList">{{tab.name}}</button>
+            </div>
+            <button class="btn bg-light btn-circle btn-sm title"><i class="fas fa-arrow-up"></i></button>
+            <button class="btn bg-light btn-circle btn-sm title"><i class="fas fa-arrow-down"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

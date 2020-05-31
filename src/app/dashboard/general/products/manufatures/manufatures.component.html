@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <div class="row py-2">
+   <div class="col-4">
+     <span>List of Manufatures</span>
+   </div>
+   <div class="col-8 d-flex justify-content-end">
+     <button  (click)="reset()" class="btn blue-btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Create New Brand</button>
+   </div>
+
+   <!-- create brand -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new manufacturer</h5>
+          <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div>
+          <form [formGroup]="manufactureForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body p-0">
+          <div class="container-fluid">
+            <div class="row">
+              
+              <div class="col-12 px-0 my-2">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-8 py-2">
+                        <div class="form-group">
+                          <input formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" type="text" id="name" class="form-control" required>
+                          <label class="form-control-placeholder" for="name">Name of Manufature</label>
+                          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                         
+                        </div>
+                        </div>
+                      
+
+                       <div class="form-group">
+                        <input formControlName="website" [ngClass]="{ 'is-invalid': submitted && f.website.errors }" type="text" id="website" class="form-control" required>
+                        <label class="form-control-placeholder" for="website">website</label>
+                        <div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+                         
+                      </div>
+                      </div>
+
+
+                      </div>
+                      <div class="col-4 py-2">
+                       <span>Logo</span>
+                       <div class="" *ngIf="brand.logo === null">
+                         <input formControlName="logo" [ngClass]="{ 'is-invalid': submitted && f.logo.errors }"  type="file" name="logo" id="logo" (change)="logoSelect($event)">
+                       </div>
+                       <div class="w-100 position-relative d-flex justify-content-center align-items-center" *ngIf="brand.logo !== null">
+                         <img src="{{brand.logo}}" width="100%" height="130px" alt="{{brand.name}}" class="position-relative">
+                         <div class="position-absolute box text-danger">
+                           <i class="las la-times-circle" (click)="brand.logo = null"></i>
+                         </div>
+                       </div>
+                      </div>
+                    </div>
+                    <div class="row py-2">
+                      <div class="col-12 d-flex align-items-center justify-content-between">
+                       <div class="custom-control custom-switch">
+                         <input formControlName="active" [ngClass]="{ 'is-invalid': submitted && f.active.errors }" type="checkbox" class="custom-control-input" id="customSwitch1">
+                         <label class="custom-control-label" for="customSwitch1">Active</label>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary blue-btn" *ngIf="!brandeditFlag">Save</button>
+          <button type="submit" class="btn btn-primary blue-btn" *ngIf="brandeditFlag">Save</button>
+        </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- create brand -->
+  </div>
+  <div class="row py-3">
+    <div class="col-2">
+      <span>Logo</span>
+    </div>
+    <div class="col-5 d-flex align-items-center justify-content-between">
+      <span>Name</span>
+      <span>Website</span>
+    </div>
+    <div class="col-2 d-flex justify-content-end">
+      <span>Status</span>
+    </div>
+    <div class="col-3 d-flex justify-content-end">Opertions</div>
+  </div>
+
+  <div class="row brand py-3 border-bottom" *ngFor="let item of brandList">
+    <div class="col-2">
+      <img src="{{item.logo}}" width="100px" alt="{{item.name}}">
+    </div>
+    <div class="col-5 d-flex align-items-center justify-content-between">
+      <span>{{item.name}}</span>
+      <span>{{item.website}}</span>
+    </div>
+    <div class="col-2 d-flex justify-content-end align-items-center">
+      <span class="text-success" *ngIf="item.active">Active</span>
+      <span class="text-danger" *ngIf="!item.active">Inactive</span>
+    </div>
+    <div class="col-3 d-flex align-items-center justify-content-end">
+      <div class="">
+        <i class="las la-edit" (click)="edit(item)" data-toggle="modal" data-target="#exampleModal"></i>
+        <i class="las la-trash-alt" (click)="delete(item)"></i>
+      </div>
+    </div>
+  </div>
+</div>

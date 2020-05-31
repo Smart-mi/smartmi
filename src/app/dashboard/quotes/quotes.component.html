@@ -1,0 +1,129 @@
+<div class="container-fluid">
+  <div class="row py-3">
+    <div class="col-8">
+      <nav aria-label="breadcrumb bg-light">
+        <ol class="breadcrumb my-0">
+          <li class="breadcrumb-item"><span class="material-icons">
+              home
+            </span></li>
+          <li class="breadcrumb-item">Quotes</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-4 d-flex align-items-center justify-content-end">
+      <button class="btn bg-primary" (click)="navigate('dashboard/createquote')">Create New Quotes</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="container-fluid">
+          <div class="row py-3 border-bottom">
+            <div class="col-8 d-flex align-items-center">
+              <span>Quotes</span>
+            </div>
+            <div class="col-4">
+              <input type="text" name="" id="" class="form-control">
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-10">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-3">
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+                  <div class="col-3">
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+                  <div class="col-3">
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+                  <div class="col-3">
+                    <select class="form-control form-control-sm">
+                      <option>Small select</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2 d-flex align-items-center justify-content-end">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sort
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 px-0">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+ .userNameColor {
+   font-family: poppins-regular, sans-serif !important;
+  color: #5e77ff!important;
+  font-weight: 400;
+ }
+.productDescvalue {
+  font-size: 14px;
+  color: #646c9a;
+}
+.productDescTitle {
+  color: #b3b8cf;
+  font-size: 14px;
+}
+.card {
+  border-radius: 2px !important;
+}

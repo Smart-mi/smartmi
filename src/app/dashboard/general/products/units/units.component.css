@@ -1,0 +1,39 @@
+.text-smartmi {
+  font-size: 14px !important;
+  color: #646b9a !important;
+
+}
+.blue-btn {
+  height: 36px;
+  min-width: 140px;
+  max-width: 200px;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0!important;
+  border-radius: 2px;
+}
+input.is-invalid {
+
+  border-color: rgb(216, 12, 12) !important;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+}

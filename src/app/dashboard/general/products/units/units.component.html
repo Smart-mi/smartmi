@@ -1,0 +1,103 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Units</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 py-2">
+            <span>Update measurement unit</span>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="unitname">Unit Name</label>
+              <input [(ngModel)]="unit.name" type="text" class="form-control" id="unitname" placeholder="Unit Name">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="unitsymbol">Unit Symbol</label>
+              <input [(ngModel)]="unit.symbol" type="text" class="form-control" id="unitsymbol" placeholder="Eg: mm, cm, kg">
+            </div>
+          </div>
+          <div class="col-12 d-flex align-items-center justify-content-end">
+            <button class="btn btn-primary blue-btn btn-sm shadow-sm" (click)="update()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row py-2">
+    <div class="col-6 border-right">
+      <div class="container-fluid">
+
+        <div class="row text-smartmi py-2">
+          <div class="col-4 d-flex align-items-center justify-content-start">Unit</div>
+          <div class="col-4 d-flex align-items-center justify-content-center">Symbol</div>
+          <div class="col-4 d-flex align-items-center justify-content-end">Action</div>
+        </div>
+        <div class="row text-smartmi py-2 border-bottom" *ngFor="let unit of unitData">
+          <div class="col-4 d-flex align-items-center justify-content-start">{{unit.name}}</div>
+          <div class="col-4 d-flex align-items-center justify-content-center">{{unit.symbol}}</div>
+          <div class="col-4 pr-0 d-flex align-items-center justify-content-end">
+            <i class="las la-edit" (click)="edit(unit)" data-toggle="modal" data-target="#exampleModal"></i>
+            <i class="las la-trash-alt mx-1" (click)="delete(unit)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="container-fluid">
+        <form [formGroup]="unitForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          
+          <div class="col-12 py-2">
+            <span>Add new measurement unit</span>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>{{unitFormCaption?.caption1}}</mat-label>
+                <input matInput formControlName="unitName" [placeholder]="unitFormCaption?.caption1"
+                    required>
+                
+            </mat-form-field>
+              <!-- <input formControlName="unitName" [ngClass]="{ 'is-invalid': submitted && f.unitName.errors }" type="text" id="unitName" class="form-control" required>
+              <label class="form-control-placeholder" for="unitName">Unit Name</label>
+              <div *ngIf="submitted && f.unitName.errors" class="invalid-feedback"> -->
+               
+            <!-- </div> -->
+            </div>
+          </div>
+        
+          <div class="col-12">
+          <div class="form-group">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>{{unitFormCaption?.caption2}}</mat-label>
+              <input matInput formControlName="symbol" [placeholder]="unitFormCaption?.caption2"
+                  required>
+              
+          </mat-form-field>
+            <!-- <input formControlName="symbol" [ngClass]="{ 'is-invalid': submitted && f.symbol.errors }" type="text" id="password" class="form-control" required>
+            <label class="form-control-placeholder" for="password">Unit Symbol</label>
+            <div *ngIf="submitted && f.symbol.errors" class="invalid-feedback">
+             
+          </div> -->
+          </div>
+        </div>
+          <div class="col-12 d-flex align-items-center justify-content-end">
+            <button class="btn btn-primary blue-btn btn-sm shadow-sm">Save</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

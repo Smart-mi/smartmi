@@ -1,0 +1,12 @@
+.breadcrumb-item+.breadcrumb-item::before{
+  content: '' !important;
+  background: #dad9e8 !important;
+  width: 4px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  margin-right: 7px !important;
+}
+.btn-box{
+  width: 30px;
+  height: 30px;
+}

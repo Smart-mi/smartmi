@@ -1,0 +1,174 @@
+<!-- <div class="container-fluid">
+  <div class="row">
+
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="leads"
+      [popoverOnHover]="false" >
+      <div class="d-flex box align-items-center justify-content-center point" [routerLink]="['/dashboard/leads']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmileads">&#xe807;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="quotes"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point"  [routerLink]="['/dashboard/quotes']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmiquotes">&#xe80d;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="products"
+      [popoverOnHover]="false" >
+      <div class="d-flex box align-items-center justify-content-center point">
+        <i class="demo-icon icon-smartmiproducs">&#xe80b;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="users"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point" [routerLink]="['/dashboard/users']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmiusers">&#xe810;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="customers"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point">
+        <i class="demo-icon icon-smartmicustomers">&#xe802;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="projects"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point">
+        <i class="demo-icon icon-smartmiprojects">&#xe80c;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex pad-12 justify-content-center tile align-items-center py-3" [popover]="general"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point" [routerLink]="['/dashboard/general/home/company']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmigeneral">&#xe805;</i>
+      </div>
+    </div>
+
+    <popover-content #dashboard  placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">
+      Dashboard
+    </popover-content>
+    <popover-content #leads placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      Leads
+    </popover-content>
+    <popover-content #quotes placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">
+      Quotes
+    </popover-content>
+    <popover-content #products placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Products</span>
+        <span class="py-1">Product Ctegories</span>
+        <span class="py-1"> Average Cost</span>
+      </div>
+    </popover-content>
+    <popover-content #users placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Users</span>
+        <span class="py-1">Roles and Assesebilities</span>
+      </div>
+    </popover-content>
+    <popover-content #customers placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Customers</span>
+      </div>
+    </popover-content>
+    <popover-content #projects placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Projects</span>
+        <span class="py-1">Project Requirement</span>
+      </div>
+    </popover-content>
+    <popover-content #general placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">General</span>
+      </div>
+    </popover-content>
+  </div>
+</div> -->
+<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmileads">&#xe807;</mat-icon>
+     
+    </mat-list-item>
+    <!-- <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+      <a mat-list-item href="...">Submenu Item 1</a>
+      <a mat-list-item href="...">Submenu Item 2</a>
+      <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+        <mat-list-item>SubSubmenu Item 1</mat-list-item>
+        <mat-list-item>SubSubmenu Item 2</mat-list-item>
+      </div>
+    </div> -->
+  </mat-nav-list>
+
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmiquotes">&#xe80d;</mat-icon>
+     
+    </mat-list-item>
+  
+  </mat-nav-list>
+
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmiproducs">&#xe80b;</mat-icon>
+     
+    </mat-list-item>
+  
+  </mat-nav-list>
+
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmiusers">&#xe810;</mat-icon>
+     
+    </mat-list-item>
+  
+  </mat-nav-list>
+
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmicustomers">&#xe802;</mat-icon>
+     
+    </mat-list-item>
+  
+  </mat-nav-list>
+
+
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmiprojects">&#xe80c;</mat-icon>
+     
+    </mat-list-item>
+  
+  </mat-nav-list>
+
+  <mat-nav-list>
+    <mat-list-item class="parent">
+     
+      <mat-icon class="white-icon demo-icon icon-smartmigeneral">&#xe805;</mat-icon>
+     
+    </mat-list-item>
+  
+  </mat-nav-list>
+
+
+
+</mat-sidenav>

@@ -1,0 +1,254 @@
+@import '~ngx-toastr/toastr';
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+
+@font-face {
+  font-family: 'smartmimenufont';
+  src: url('./assets/font/smartmimenufont.eot?54398873');
+  src: url('./assets/font/smartmimenufont.eot?54398873#iefix') format('embedded-opentype'),
+       url('./assets/font/smartmimenufont.woff?54398873') format('woff'),
+       url('./assets/font/smartmimenufont.ttf?54398873') format('truetype'),
+       url('./assets/font/smartmimenufont.svg?54398873#smartmimenufont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: poppins-regular;
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+@font-face{
+  font-family: poppins-medium;
+  src: url(./assets/fonts/Poppins-Medium.ttf);
+}
+@font-face{
+  font-family: fontawsome;
+  src: url(./assets/fonts/fa-solid-900.ttf);
+}
+.demo-icon:before{
+  
+}
+.demo-icon
+    {
+      font-family: "smartmimenufont";
+      font-style: normal;
+      font-size: 12px;
+      font-weight: normal;
+      speak: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      text-align: center;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: poppins-regular, sans-serif !important;
+  color: #646b9a !important;
+  font-size: 16px;
+}
+.bg-light{
+  background-color: #E7EBFF !important;
+}
+.bg-primary{
+  background-color: #5E77FF !important;
+  color: white !important;
+}
+.text-primary{
+  color: #5E77FF;
+}
+.text-gray {
+  color: #646b9a;
+}
+.btn-secondary {
+  background-color: #868e96 !important;
+}
+.breadcrumb{
+  background-color: transparent !important;
+}
+.las{
+  font-size: 24px;
+}
+.title{
+  font-family: poppins-medium;
+  color: #636177;
+  font-size: 14px;
+  font-weight:900;
+}
+.title-alt{
+  color: #646b9a;
+  font-size: 16px;
+  font-weight: 100;
+}
+.sub-title{
+  font-family: poppins-medium;
+   font-size: 12px;
+}
+.breadcrumb-item+.breadcrumb-item::before{
+  content: '' !important;
+  background: #dad9e8 !important;
+  width: 4px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  margin-right: 7px !important;
+}
+.breadcrumb-item {
+  color: #636177;
+  font-size: 13px;
+}
+.breadcrumb .breadcrumb-item a {
+  color: #a0a7c4;
+    font-size: 13px;
+    text-decoration: none;
+}
+.la-edit, .la-trash-alt, .la-times-circle {
+  cursor: pointer;
+  font-size: 18px;
+}
+.fa-caret-up{
+  font-size: 32px;
+}
+.custom-control-label::before {
+  height: 1.7rem !important;
+}
+.custom-control-label::before {
+  content: 'Inactive';
+  color: white;
+  background-color:#FF4E7D;
+  text-align: right;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+}
+.custom-switch .custom-control-label::before {
+  width: 90px !important;
+  border-radius: 50px;
+}
+.custom-switch .custom-control-label.custom-control-label::after {
+  background-color: white !important;
+}
+.custom-switch .custom-control-label::after {
+  top: 7px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+}
+.custom-switch .custom-control-input:checked~.custom-control-label::after {
+  transform: translateX(64px) !important;
+}
+.custom-control-input:checked~.custom-control-label::before {
+  content: 'active';
+  color: white;
+  background-color: #15CDA8 !important;
+  padding-left: 5px;
+}
+.form-control{
+  border: 1px solid #eaedf1!important;
+  border-radius: 0px!important;
+  display: block !important;
+  min-height: 44px !important;
+}
+.form-control:focus{
+  border: 2px solid #5E77FF !important;
+  box-shadow: none !important;
+}
+.save:hover {
+  background-color: white !important;
+  color: rgb(113, 135, 255);
+  border: 1px solid #5E77FF !important;
+}
+.select-wraper {
+  position: relative;
+}
+select {
+  -webkit-appearance: none;
+}
+.select-wraper::after {
+  content: "\f078";
+  font-family: fontawsome;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  pointer-events: none;
+}
+.form-control:focus ~ .select-wraper  {
+  border: 5px solid green !important;
+}
+input::placeholder {
+  color: #B6C5DB !important;
+}
+.lnr{
+  font-size: 20px;
+}
+.point {
+  cursor: pointer;
+}
+.btn{
+  border: none !important;
+  padding: 5px !important;
+  border-radius: 2px !important;
+  border: 1px solid #5e77ff !important;
+  font-size: 13px;
+}
+.btn-primary {
+  background-color: #5E77FF !important
+}
+.btn-primary:hover {
+  border: 1px solid #5e77ff !important;
+  color: #5e77ff;
+  background-color: #ffffff !important;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: none !important;
+}
+label{
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  color: #646c9a !important;
+}
+.blue-btn {
+  height: 36px;
+  min-width: 140px;
+  max-width: 200px;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0!important;
+  border-radius: 2px;
+}
+.modal-title{
+  font-size: 17px !important;
+  font-weight: 900;
+}
+.modal-content {
+  border-radius: 0px !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

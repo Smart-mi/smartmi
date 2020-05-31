@@ -1,0 +1,115 @@
+#companylogo{
+  width: 100%;
+  height: 200px;
+  background-color: red;
+  position: relative;
+}
+#companylogo::after{
+font-family: fontawsome;
+content: '\f382  Drag and drop file or select';
+width: 100%;
+height: 100%;
+background-color: #F7F8FA;
+position: absolute;
+top: 0;
+left: 0;
+padding: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.box{
+  width: 50px;
+  height: 50px;
+  top:-25px;
+  right: -25px;
+  z-index: 10px;
+  border-radius: 50%;
+
+}
+.icon {
+  font-size: 12px !important;
+  color: #5E77FF;
+}
+.bg-icon {
+  background-color: #F5F7FE;
+}
+.btn-select {
+  border: none !important;
+  -webkit-appearance: none !important;
+}
+.form-group label {
+  font-family: poppins-medium;
+  font-size: 14px;
+  color: #646c9a;
+  font-weight: 500;
+}
+.input-group-text {
+  background-color: #f3f4f7 !important;
+  color: #B3B8CF !important;
+
+}
+.blue-btn {
+  height: 36px;
+  min-width: 140px;
+  max-width: 200px;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0!important;
+  border-radius: 2px;
+}
+.btn-primary:hover {
+  border: 1px solid #5e77ff !important;
+  color: #5e77ff;
+  background-color: #ffffff !important;
+}
+.text-gray{
+  color: rgb(204, 204, 204) !important;
+}
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: .255em;
+  vertical-align: .255em;
+  content: none !important;
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+}
+input:focus {
+  outline: none !important;
+}
+
+label {
+  font-weight: 400 !important;
+}
+input.is-invalid {
+
+  border-color: rgb(216, 12, 12) !important;
+}
+
+select.is-invalid {
+
+  border-color: rgb(216, 12, 12) !important;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+}

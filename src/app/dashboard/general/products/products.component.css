@@ -1,0 +1,16 @@
+.bg-smartmilight {
+ background-color: #F3F4F7 !important;
+ border: none !important;
+ padding: 5px 25px !important;
+ font-size: 16px !important;
+ color: #646b9a !important;
+}
+.active {
+  background-color: #5E77FF !important;
+  color: white !important;
+}
+.btn.focus, .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+

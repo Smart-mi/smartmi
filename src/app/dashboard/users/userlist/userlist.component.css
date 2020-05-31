@@ -1,0 +1,16 @@
+.smartmi-label{
+  background-color:white;
+  margin: 0 !important;
+  top:12px;
+  padding: 0px 2px !important;
+  left: 15px;
+  color: #646b9a !important;
+  font-size: 12px !important;
+  font-weight: 100 !important;
+  position: relative;
+  z-index: 5;
+}
+.text-gray {
+  color: rgb(192, 192, 192) !important;
+  font-weight: 600 !important;
+}

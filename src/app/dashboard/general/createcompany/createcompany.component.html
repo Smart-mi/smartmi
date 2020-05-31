@@ -1,0 +1,224 @@
+<div class="container-fluid">
+  <div class="row py-3">
+    <div class="col-10">
+      <nav aria-label="breadcrumb bg-light">
+        <ol class="breadcrumb my-0">
+          <li class="breadcrumb-item">
+            <i class="fas fa-home" [routerLink]="['/dashboard']"></i></li>
+          <li class="breadcrumb-item"><a [routerLink]="['/dashboard/general/home/company']">Company</a></li>
+          <li class="breadcrumb-item active">create New Company</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-2 d-flex align-items-center">
+       <input type="search" name="" id="" class="form-control pl-5 position-relative">
+       <i class="fas fa-search text-gray position-absolute pl-2"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="container-fluid">
+          <div class="row py-3 border-bottom">
+            <div class="col-8 d-flex align-items-center">
+              <span class="bg-icon d-flex align-items-center justify-content-center py-2 px-2 rounded-circle border-0 mx-2" (click)="back()"><i class="fas icon point fa-arrow-left"></i></span>
+              <span>Create New Company</span>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-end">
+              <span class="px-2">Select Color</span>
+              <div class="dropdown">
+                <button class="btn btn-select btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div [ngStyle]="{backgroundColor: company.color}" style="width: 30px; height: 30px; border-radius: 50%;"></div>
+                </button>
+                <div class="dropdown-menu py-0" aria-labelledby="dropdownMenuButton">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-12 bg-light py-2">
+                        <span>Select Color</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 d-flex flex-wrap">
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #1ECDA8;" (click)="colorSelect('#1ECDA8')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #1EBEDE;" (click)="colorSelect('#1EBEDE')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #85796C;" (click)="colorSelect('#85796C')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #FDA633;" (click)="colorSelect('#FDA633')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #FD4577;" (click)="colorSelect('#FD4577')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #447EFF;" (click)="colorSelect('#447EFF')"></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+          <div class="row py-3">
+            <div class="col-6">
+              <div class="contanier-fluid">
+                <div class="row">
+                  <div class="col-lg-12 col-12">
+                    <div class="form-group">
+                      <input formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" type="text" id="name" class="form-control" required>
+                      <label class="form-control-placeholder" for="name">Company Name</label>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="text" id="email" class="form-control" required>
+                      <label class="form-control-placeholder" for="email">Email</label>
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2">@</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input formControlName="fax" [ngClass]="{ 'is-invalid': submitted && f.fax.errors }" type="text" id="fax" class="form-control" required>
+                        <label class="form-control-placeholder" for="fax">Fax</label>
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2"><i class="las la-exclamation-circle"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <input formControlName="address1" [ngClass]="{ 'is-invalid': submitted && f.address1.errors }" type="text" id="address1" class="form-control" required >
+                        <label class="form-control-placeholder" for="address1">Address line 1</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <input formControlName="address2" [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" type="text" id="address2" class="form-control" required >
+                      <label class="form-control-placeholder" for="address2">Address line 2</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12 d-flex align-items-center">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Status</label>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" formControlName="status" [ngClass]="{ 'is-invalid': submitted && f.status.errors }" class="custom-control-input" id="Status" >
+                        <label class="custom-control-label" for="Status"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12 d-flex align-items-center">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Report</label>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" formControlName="report" [ngClass]="{ 'is-invalid': submitted && f.report.errors }" class="custom-control-input" id="report" >
+                        <label class="custom-control-label" for="report"></label>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <input formControlName="code" [ngClass]="{ 'is-invalid': submitted && f.code.errors }" type="text" id="companycode" class="form-control" required >
+                      <label class="form-control-placeholder" for="companycode">Comapnay Code</label>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                          <input formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" type="text" id="phone" class="form-control" required >
+                          <label class="form-control-placeholder" for="phone">Phone</label>
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2"><i class="las la-exclamation-circle"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <input formControlName="website" [ngClass]="{ 'is-invalid': submitted && f.website.errors }" type="text" id="website" class="form-control" required >
+                      <label class="form-control-placeholder" for="website">Website</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <div class="select-wraper">
+                        <select formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" class="form-control" id="country">
+                          <option *ngFor="let country of countryList" value="{{country}}">{{country}}</option>
+                        </select>
+                        <label class="form-control-placeholder" for="country">Country</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12">
+                    <div class="d-flex flex-column">
+                      <label for="companylogo">Logo</label>
+                      <div class="d-flex">
+                        <input type="file" formControlName="logo" [ngClass]="{ 'is-invalid': submitted && f.logo.errors }" name="" (change)="logoSelect($event)" id="companylogo" *ngIf="company.logo === null">
+                        <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.logo !== null">
+                          <img src="{{company.logo}}"  height="150px">
+                          <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                            <i class="las la-times-circle" (click)="logoclose()"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12">
+                    <div class="d-flex flex-column">
+                      <label for="companylogo">Header</label>
+                      <div class="d-flex">
+                        <input type="file" formControlName="header" [ngClass]="{ 'is-invalid': submitted && f.header.errors }" name="" (change)="headerSelect($event)" id="companylogo" *ngIf="company.header === null">
+                        <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.header !== null">
+                            <img src="{{company.header}}"  height="150px">
+                          <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                            <i class="las la-times-circle" (click)="headerclose()"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12">
+                    <div class="d-flex flex-column">
+                      <label for="companylogo">Footer</label>
+                      <div class="d-flex">
+                        <input type="file" formControlName="footer" [ngClass]="{ 'is-invalid': submitted && f.footer.errors }"  name="" (change)="footerSelect($event)" id="companylogo" *ngIf="company.footer === null">
+                        <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.footer !== null">
+                          <img src="{{company.footer}}" height="150px">
+                          <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                            <i class="las la-times-circle" (click)="footerclose()"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-12 d-flex align-items-center justify-content-end">
+              <button class="btn btn-primary blue-btn"  *ngIf="addFlag">Save</button>
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-end">
+              <button class="btn btn-primary" (click)="update()" *ngIf="updateFlag">Update</button>
+            </div>
+          </div>
+        </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
